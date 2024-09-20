@@ -9,7 +9,7 @@
     --link-text-decoration                            : underline;
     --link-text-decoration-color                      : #000;
     --sidebar-name-color                              : #000;
-    --sidebar-background                              : #DCD0C5;
+    --sidebar-background                              : #bfedc1;
     --sidebar-nav-link-color--active                  : #4D4D4D;
     --cover-heading-font-size-max                     : 40;
     --cover-heading-font-size-min                     : 34;
@@ -25,7 +25,7 @@
     --heading-h5-font-weight: 500;
     --heading-h6-font-size: var(--font-size-xs);
     --sidebar-nav-link-font-weight--active            : bold;
-    --sidebar-border-color                            : #BAB3AC;
+    --sidebar-border-color                            : #63ab0d;
     --sidebar-width                                   : 22rem;
     --sidebar-nav-pagelink-background-position        : 3px 10px;
     --sidebar-nav-pagelink-background-position--active: 3px 10px; /*left center*/
