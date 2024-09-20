@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Exporting to ODT/DOCX</title>
+    <link type="text/css" rel="stylesheet" href="css/book.css" />
+    <link type="text/css" rel="stylesheet" href="css/springer.css" />
+  </head>
+  <body class="book-chapter">
+    <div class="doc-part doc-title" id="_1_0">Exporting to ODT/DOCX</div>
+    <div class="doc-part doc-richtext doc-body">
+      <p>You can export both individual documents or entire books to either ODT or DOCX. The export process involves taking an existing file in the given format (the template file) and filling in the different sections of the document and book within that file. You can customize the output by styling the template file and organize it so that it contains the different sections of your document in the order you want them.</p>
+      <h1 id="H4295262">Creating a template file for documents</h1>
+      <p>A template file is just a regular DOCX or ODT file and it works the same in both cases. </p>
+      <p>In the place where you want a specific <strong>one-line section</strong> to go, you write the id of that section surrounded by curly brackets (these: {}). So, for example, if you want to put the title of the text in a specific place, write <strong>{title}</strong> there. This will replace the text <strong>{title}</strong> with the actual title of the document. </p>
+      <p>If, on the other hand, you want to place a <strong>multi-line section</strong> (a rich-text section like an abstract or a body or a bibliography), you add an <strong>@ at the beginning</strong> of the id of that section and then surround it by curly brackets. So, for example, if you want to place the body somewhere, you create a paragraph containing the text <strong>{@body}</strong>. This will replace the entire paragraph and insert additional paragraphs to accommodate this section's contents.</p>
+      <h2 id="H2482613">Where to find the ID of a section</h2>
+      <p>You can find the IDs of the various document sections in the document template manager. Additionally, the id <strong>bibliography</strong> is automatically generated and will contain the document's bibliography.</p>
+      <h2 id="H1362510">Where to put the template file for documents</h2>
+      <p>The template files are connected to document templates, as each document template defines which sections will exist within that template. By default, Fidus Writer comes with a standard document template that already contains templates for export to DOCX and ODT. If you want to add your template files, you can copy the standard template by selecting it and then choosing "Duplicate selected" in the dropdown menu. This should give you a second template named "Copy of Standard Article".</p>
+      <figure id="F28047361" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/1bcd14df-c8f0-40eb-bffa-9144af0cf059.png"></figure>
+      <p>You can enter the template editor by clicking on the title "Copy of Standard Article". Within the editor, scroll to the bottom and upload your templates where it says "Export Templates".</p>
+      <figure id="F31456201" class="aligned-center image-width-100" data-aligned="center" data-width="100" data-category="none" data-caption-hidden="true"><img src="images/d8340ee5-ce38-4533-892d-f23ff643bff0.png"></figure>
+      <p>Remember that if you make any adjustments to the template such as adding or removing sections, you should also upload new export templates that contain the updated section IDs.</p>
+      <h2 id="H9082176">How to export a document to ODT or DOCX</h2>
+      <p>There are two places you can export a document to ODT or DOCX. Note that you need to have DOCX and/or ODT export templates registered with the template of the document you want to export in order for the menu options mentioned below to show up.</p>
+      <p>Within the document editor itself, at the top of the page is a menu titled "Export". Inside of it you get options to export to the various formats, including each of the registered ODT/DOCX export templates.</p>
+      <figure id="F72250141" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/5916dfdb-d559-4e33-bfbd-a4a831ed3b53.png"></figure>
+      <p>Alternatively, on the documents overview page, you can select the document(s) you want to export and then select the export format in the file selector dropdown menu.</p>
+      <figure id="F76429901" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/5b10ed0a-8820-44af-adfb-8b05c289055a.png"></figure>
+      <h1 id="H930600">Creating a template file for books</h1>
+      <h2 id="H1573374">Basic</h2>
+      <p>If you want a basic template, you can reuse the same template file you use for documents for books. Instead of just filling in the fields in the right places, it will then take a copy of the entire contents of the template file and use that as a template for each chapter. It will automatically insert page breaks between each chapter.</p>
+      <h2 id="H5025084">Advanced</h2>
+      <p>If you want to create a more complex template file that also includes the metadata of the book itself, you can do so by adding a preamble to the beginning of the template and/or a postamble at the end of it. You need to mark where the preamble starts by <strong>adding a bookmark</strong> to the beginning of the document and giving that bookmark the <strong>title "preamble"</strong>. You also need to show where the body of the document starts by adding another bookmark at the first line of the body contents with the <strong>title "body"</strong>. If you want to add a postamble, show where it starts by adding a bookmark with the <strong>title "postamble"</strong>. </p>
+      <p>Fidus Writer will include the preamble and postamble once in the output document, and the body once for every chapter. Note that it will add page breaks between each chapter, but not before the first chapter and after the last chapter. If you want page breaks there, make sure to include them as part of the preamble and postamble.</p>
+      <p>Within the preamble and postamble, you can now add these metadata inline sections the same way you can with document sections:</p>
+      <ul id="L11915331">
+        <li>
+          <p>{book.title}</p>
+        </li>
+        <li>
+          <p>{book.subtitle}</p>
+        </li>
+        <li>
+          <p>{book.version}</p>
+        </li>
+        <li>
+          <p>{book.publisher}</p>
+        </li>
+        <li>
+          <p>{book.copyright}</p>
+        </li>
+        <li>
+          <p>{book.author}</p>
+        </li>
+        <li>
+          <p>{book.keywords}</p>
+        </li>
+        <li>
+          <p>{book.language}</p>
+        </li>
+      </ul>
+      <h2 id="H7405430">Where to put the template file for books</h2>
+      <p>Unlike documents, there are no predefined book templates and export template files need to be added to individual books. If you haven't created a book already, do so on the "Book" tab by clicking on "Create new book" which will open up the book editing dialog.</p>
+      <figure id="F28382281" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/262f8e48-c6ce-4f93-8b4c-7b932cb4de2a.png"></figure>
+      <p></p>
+      <p>Under the tabs DOCX and ODT, you can upload a DOCX and a ODT template.</p>
+      <figure id="F58425981" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/81856dff-2e9c-443b-9ea0-a8342df5590b.png"></figure>
+      <h2 id="H171732">How to export a book as DOCX or ODT</h2>
+      <p>After you have added the export templates to the book, you can export books in DOCX and ODT format in two places:</p>
+      <p>At the bottom right of the book editing dialog, if you click on "Export" you get a drop down menu that allows you to export to any of the supported formats.</p>
+      <figure id="F95888771" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/02a94b81-e14f-4c0d-be41-0c9dfb1a6f47.png"></figure>
+      <p>Alternatively, on the books overview page, you can select the book you want to export and then select the format from the file selector dropdown.</p>
+      <figure id="F81667321" class="aligned-center image-width-50" data-aligned="center" data-width="50" data-category="none" data-caption-hidden="true"><img src="images/9b146548-c905-4d87-b58d-3a8a823cfc28.png"></figure>
+    </div>
+    <section class="fnlist" role="doc-footnotes"></section>
+  </body>
+</html>
