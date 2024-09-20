@@ -1,0 +1,6 @@
+{
+  "__comment": "Set values to false if no link should be created.",
+  "repoURL": "https://www.github.com/fiduswriter/manual/",
+  "repoBranch": "main",
+  "vivlioURL": "https://vivliostyle.vercel.app/"
+}
